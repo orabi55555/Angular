@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ahmed",
+      "age": "21",
+      "email": "ahmed@gmail.com",
+      "phone": "0127127772",
+      
+    },
+    {
+      "id": 2,
+      "name": "hesham",
+      "age": 23,
+      "email": "hesham@gmail.com",
+      "phone": "0128181"
+    },
+    {
+      "id": 3,
+      "name": "mahmoud",
+      "age": 25,
+      "email": "mahmoud@gmail.com",
+      "phone": "03566633"
+    },
+    {
+      "id": 4,
+      "name": "abdelhamid",
+      "age": 26,
+      "email": "abdelhamid@gmail.com",
+      "phone": "0466784"
+    }
+  ]
+}

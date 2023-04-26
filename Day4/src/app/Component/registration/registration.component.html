@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row ">
+    <div class="col">
+      <h1 class="w-50 m-auto text-center alert alert-dark mt-2 mb-3">Registration</h1>
+      <div class="w-50 m-auto mt-2" *ngIf="isRegistred  else trueBlockName" >
+        <p class="alert alert-success p-2">You Are Registered Now</p>
+      </div>
+      <ng-template #trueBlockName>
+        <div class="w-50 m-auto mt-2" *ngIf="!isRegistred">
+          <p class="alert alert-danger p-2">please check your inputs</p>
+        </div>
+      </ng-template>
+      <form (ngSubmit)="add()" [formGroup]="validationForm" class="form">
+
+        <div class="form-group d-flex mt-2">
+          <label class="col-3" for="nm">Name</label>
+          <!-- <input [(ngModel)]="name" class="form-control" type="text" id="nm" /> -->
+          <input formControlName="name" #name class="form-control w-50" type="text"  placeholder="Enter your name" id="nm" />
+        </div>
+        <div class="w-50 m-auto mt-2"  *ngIf="!isNameValid">
+          <p class="alert alert-danger p-2">Name length must be greater than 3</p>
+        </div>
+        <div class="form-group d-flex mt-2">
+          <label class="col-3" for="ag">Age</label>
+          <!-- <input [(ngModel)]="age" class="form-control" type="text" id="ag" /> -->
+          <input formControlName="age"
+           #age class="form-control w-50"
+           type="number"
+           placeholder="Enter your age"
+           id="ag" />
+        </div>
+        <div class="w-50 m-auto mt-2" *ngIf="!isAgeValid">
+          <p class="alert alert-danger p-2">Age should be between 20 and 40</p>
+        </div>
+        <div class="form-group  d-flex mt-2">
+          <label class="col-3" for="inputEmail">Email : </label>
+          <input
+            formControlName="email"
+            #email
+            type="email"
+            class="form-control w-50"
+            id="inputEmail"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div class="w-50 m-auto mt-2" *ngIf="!isEmailValid">
+          <p class="alert alert-danger p-2">Email is invalid</p>
+        </div>
+        <div class="form-group d-flex mt-2 justify-content-center">
+          <input (click)="Add(name.value, age.value,email.value)" class="btn btn-outline-success" type="submit" value="ADD"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
